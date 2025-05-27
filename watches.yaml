@@ -1,2 +1,6 @@
 # Use the 'create api' subcommand to add watches to this file.
+- group: plex.unmango.dev
+  version: v1alpha1
+  kind: Plex
+  chart: helm-charts/plex
 # +kubebuilder:scaffold:watch

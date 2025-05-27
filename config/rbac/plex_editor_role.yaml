@@ -1,0 +1,27 @@
+# permissions for end users to edit plexes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: plex-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: plex-editor-role
+rules:
+- apiGroups:
+  - plex.unmango.dev
+  resources:
+  - plexes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - plex.unmango.dev
+  resources:
+  - plexes/status
+  verbs:
+  - get

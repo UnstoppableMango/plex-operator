@@ -1,0 +1,23 @@
+# permissions for end users to view plexes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: plex-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: plex-viewer-role
+rules:
+- apiGroups:
+  - plex.unmango.dev
+  resources:
+  - plexes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - plex.unmango.dev
+  resources:
+  - plexes/status
+  verbs:
+  - get
